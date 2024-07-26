@@ -1,24 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <EditText
-        android:id="@+id/editTextTask"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Agregar nueva tarea" />
-
+    <!-- Botón para mostrar el formulario de agregar tarea -->
     <Button
-        android:id="@+id/buttonAdd"
+        android:id="@+id/buttonShowForm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Agregar" />
+        android:text="Agregar Tarea" />
 
+    <!-- Formulario para ingresar una nueva tarea -->
+    <LinearLayout
+        android:id="@+id/formContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/editTextTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Agregar nueva tarea"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/editTextDueDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="false"
+            android:hint="Fecha límite (dd/mm/aaaa)"
+            android:inputType="date"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/editTextCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Categoría"
+            android:minHeight="48dp" />
+
+        <Button
+            android:id="@+id/buttonAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agregar"
+            android:layout_gravity="end"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+    <!-- RecyclerView para mostrar la lista de tareas -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewTasks"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
-
+        android:layout_weight="1"
+        android:paddingTop="8dp"/>
 </LinearLayout>

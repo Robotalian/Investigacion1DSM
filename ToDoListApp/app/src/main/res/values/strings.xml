@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ToDoListApp</string>
+    <string name="agregar">Agregar</string>
+    <string name="categor_a">Categoría</string>
+    <string name="agregar_nueva_tarea">Agregar nueva tarea</string>
+    <string name="fecha_l_mite_dd_mm_aaaa">Fecha límite (dd/mm/aaaa)</string>
+    <string name="completada">Completada</string>
 </resources>
